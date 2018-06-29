@@ -1,0 +1,6 @@
+module Pods_BKWeiBo {
+  umbrella header "Pods-BKWeiBo-umbrella.h"
+
+  export *
+  module * { export * }
+}
