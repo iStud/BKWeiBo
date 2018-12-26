@@ -15,12 +15,21 @@ class BKTabBarController: UITabBarController {
         
         addChildVc(childController:BKHomeController(), imageName: "tabbar_home", title: "首页")
         addChildVc(childController:BKMessageController(), imageName: "tabbar_message_center", title: "消息")
-        addChildViewController(UIViewController())
+        addChildVc(childController:BKComposeController(), imageName: "", title: "")
         addChildVc(childController:BKDiscoverController(), imageName: "tabbar_discover", title: "发现")
         addChildVc(childController:BKMeController(), imageName: "tabbar_profile", title: "我")
         
         
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        // 添加加号按钮
+        setupComposeButton()
+    }
+    
     
     func addChildVc(childController:UIViewController,imageName:String,title:String) -> Void {
         
@@ -37,9 +46,41 @@ class BKTabBarController: UITabBarController {
         addChildViewController(nav)
     }
     
+    // 懒加载创建撰写按钮
+    lazy var composeBtn: UIButton = {
+        
+        let button = UIButton()
+        
+        button.setImage(UIImage(named: "tabbar_compose_icon_add"), for:.normal)
+        button.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
+
+        button.addTarget(self,action:#selector(btnClick),for:.touchUpInside)
+        
+        return button
+    }()
     
     
+    private func setupComposeButton()
+    {
+        tabBar.addSubview(composeBtn)
+        
+        // 1.计算按钮宽度
+        let width = tabBar.bounds.width / CGFloat(viewControllers!.count)
+        // 2.创建按钮frame
+        let rect = CGRect(x: 0, y: 0, width: width, height: tabBar.bounds.height)
+        // 3.设置偏移
+        composeBtn.frame = rect.offsetBy(dx: width*2, dy: 0)
+        
+    }
     
+    @objc func btnClick() {
+        
+        print("click")
+    }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

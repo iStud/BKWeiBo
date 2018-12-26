@@ -13,7 +13,7 @@ class BKComposeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.yellow
         // Do any additional setup after loading the view.
     }
 
