@@ -13,6 +13,14 @@
 		5815EF6720E5CA5F001635E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6520E5CA5F001635E3 /* Main.storyboard */; };
 		5815EF6920E5CA61001635E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6820E5CA61001635E3 /* Assets.xcassets */; };
 		5815EF6C20E5CA61001635E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */; };
+		586E5DF720E9CC910095A6A7 /* BKTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5DF620E9CC910095A6A7 /* BKTabBar.swift */; };
+		587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7920E615E2009BBB79 /* BKTabBarController.swift */; };
+		587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */; };
+		587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */; };
+		587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */; };
+		587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8120E61BBD009BBB79 /* BKMeController.swift */; };
+		587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8320E61BCC009BBB79 /* BKMessageController.swift */; };
+		587E2C8620E62D9A009BBB79 /* BKMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		5815EF6820E5CA61001635E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5815EF6B20E5CA61001635E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5815EF6D20E5CA61001635E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		586E5DF620E9CC910095A6A7 /* BKTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKTabBar.swift; sourceTree = "<group>"; };
+		587E2C7920E615E2009BBB79 /* BKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKTabBarController.swift; sourceTree = "<group>"; };
+		587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKComposeController.swift; sourceTree = "<group>"; };
+		587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDiscoverController.swift; sourceTree = "<group>"; };
+		587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKHomeController.swift; sourceTree = "<group>"; };
+		587E2C8120E61BBD009BBB79 /* BKMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMeController.swift; sourceTree = "<group>"; };
+		587E2C8320E61BCC009BBB79 /* BKMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMessageController.swift; sourceTree = "<group>"; };
+		587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMainNavigationController.swift; sourceTree = "<group>"; };
 		9C38C71B38B1932554C3B9D3 /* Pods-BKWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BKWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BKWeiBo/Pods-BKWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		C3F2E4D96742F13617ED7AE0 /* libPods-BKWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BKWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,6 +85,7 @@
 		5815EF6020E5CA5F001635E3 /* BKWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C7820E6157D009BBB79 /* Main */,
 				587E2C5620E5E425009BBB79 /* Compose */,
 				587E2C4620E5E425009BBB79 /* Discover */,
 				587E2C4E20E5E425009BBB79 /* Home */,
@@ -97,6 +114,7 @@
 		587E2C4720E5E425009BBB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -128,6 +146,7 @@
 		587E2C4B20E5E425009BBB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C8120E61BBD009BBB79 /* BKMeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +178,7 @@
 		587E2C4F20E5E425009BBB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +210,7 @@
 		587E2C5320E5E425009BBB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C8320E61BCC009BBB79 /* BKMessageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +242,7 @@
 		587E2C5720E5E425009BBB79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +259,16 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		587E2C7820E6157D009BBB79 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				587E2C7920E615E2009BBB79 /* BKTabBarController.swift */,
+				587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */,
+				586E5DF620E9CC910095A6A7 /* BKTabBar.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FFAE4E806FEEC76E6F5CED8F /* Pods */ = {
@@ -276,6 +308,7 @@
 		5815EF5620E5CA5F001635E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BK;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = xiongbk;
@@ -362,7 +395,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5815EF6420E5CA5F001635E3 /* ViewController.swift in Sources */,
+				587E2C8620E62D9A009BBB79 /* BKMainNavigationController.swift in Sources */,
+				586E5DF720E9CC910095A6A7 /* BKTabBar.swift in Sources */,
+				587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */,
+				587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */,
+				587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */,
+				587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
+				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
+				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
