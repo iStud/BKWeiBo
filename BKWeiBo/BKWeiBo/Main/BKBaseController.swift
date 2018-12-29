@@ -6,12 +6,15 @@
 //  Copyright © 2018 xiongbk. All rights reserved.
 //
 
+
+
+
 import UIKit
 
 class BKBaseController: UITableViewController ,VisitViewDelegate{
     
 
-    var isLogin = true
+    var isLogin = false
     var visitView:BKVisitView?
     
     override func viewDidLoad() {
@@ -19,8 +22,10 @@ class BKBaseController: UITableViewController ,VisitViewDelegate{
         
         isLogin ? super.loadView() :setVisitView()
         
-
+        
+        
     }
+
     
     // MARK: - 设置UI
     
@@ -31,32 +36,36 @@ class BKBaseController: UITableViewController ,VisitViewDelegate{
         visitView?.delegate = self
         view = visitView
         
-        setNavItem()
+        // 没有登录时的导航条
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action:#selector(registerBtnClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action:#selector(loginBtnClick))
+        
         
     }
     
-    func setNavItem() {
-        
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target:nil, action:#selector(registerBtnClick))
-//        navigationItem.leftBarButtonItem?.tintColor = UIColor.orange
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: nil, action:#selector(loginBtnClick))
-//        navigationItem.rightBarButtonItem?.tintColor = UIColor.orange
-        
 
-    }
 
     
     // MARK: - VisitViewDelegate
     @objc func loginBtnClick() {
         
         print(#function)
+        
+        let oauthVC = BKOAuthController()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        present(nav, animated: true, completion: nil)
+        
+        
+
     }
     
     @objc func registerBtnClick() {
         
         print(#function)
     }
+    
+
+
     
 
 

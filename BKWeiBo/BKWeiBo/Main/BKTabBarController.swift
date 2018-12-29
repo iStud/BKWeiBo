@@ -10,6 +10,18 @@ import UIKit
 
 class BKTabBarController: UITabBarController {
     
+
+    
+//    override func viewWillLayoutSubviews() {
+//        var newTabBarFrame = tabBar.frame
+//
+//        let newTabBarHeight: CGFloat = 83
+//        newTabBarFrame.size.height = newTabBarHeight
+////        newTabBarFrame.origin.y = self.view.frame.size.height - newTabBarHeight
+//
+//        tabBar.frame = newTabBarFrame
+//    }
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,10 +82,12 @@ class BKTabBarController: UITabBarController {
         // 1.计算按钮宽度
         let width = tabBar.bounds.width / CGFloat(viewControllers!.count)
         // 2.创建按钮frame
-        let rect = CGRect(x: 0, y: 0, width: width, height: tabBar.bounds.height)
+        let rect = CGRect(x: 0, y: 0, width: width, height:49)
         // 3.设置偏移
         composeBtn.frame = rect.offsetBy(dx: width*2, dy: 0)
         
+        
+        print(tabBar.frame.height)
     }
     
     @objc func composeBtnClick() {
@@ -88,7 +102,7 @@ class BKTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     
     
 }

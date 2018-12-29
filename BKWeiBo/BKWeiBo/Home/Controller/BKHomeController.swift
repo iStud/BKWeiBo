@@ -6,6 +6,11 @@
 //  Copyright © 2018年 xiongbk. All rights reserved.
 //
 
+/*
+ App Key：3003757086
+ App Secret：f96b489c33e676f78e4d5e772689aca7
+ */
+
 import UIKit
 
 class BKHomeController: BKBaseController {
@@ -23,11 +28,10 @@ class BKHomeController: BKBaseController {
         if !isLogin {
             
             visitView?.setVisitInfo(isHome: true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
-//            visitView?.startAnimation()
-        }else{
-            
-            setNav()
+            return
         }
+        
+        setNav()
     }
 
     // MARK: - 设置 UI
