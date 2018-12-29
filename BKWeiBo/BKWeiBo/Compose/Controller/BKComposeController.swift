@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BKComposeController: UIViewController {
+class BKComposeController: BKBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

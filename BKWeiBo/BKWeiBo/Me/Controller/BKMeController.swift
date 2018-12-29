@@ -8,13 +8,17 @@
 
 import UIKit
 
-class BKMeController: UIViewController {
+class BKMeController: BKBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
-        // Do any additional setup after loading the view.
+
+        if !isLogin {
+            
+            visitView?.setVisitInfo(isHome: false, imageName: "visitordiscover_image_profile", message: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人")
+        }
     }
 
     override func didReceiveMemoryWarning() {

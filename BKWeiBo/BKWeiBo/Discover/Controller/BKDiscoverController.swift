@@ -8,12 +8,18 @@
 
 import UIKit
 
-class BKDiscoverController: UIViewController {
+class BKDiscoverController: BKBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        // Do any additional setup after loading the view.
+
+        if !isLogin {
+            
+            visitView?.setVisitInfo(isHome: false, imageName: "visitordiscover_image_profile", message: "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过")
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

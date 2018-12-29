@@ -40,6 +40,7 @@ class BKTabBarController: UITabBarController {
         
         // 修改 tabbar 文字的颜色
         childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for:.selected);
+        childController.title = title
         
         // 添加导航控制器
         let nav = UINavigationController(rootViewController: childController)
@@ -56,7 +57,7 @@ class BKTabBarController: UITabBarController {
         button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
         button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
 
-        button.addTarget(self,action:#selector(btnClick),for:.touchUpInside)
+        button.addTarget(self,action:#selector(composeBtnClick),for:.touchUpInside)
         
         return button
     }()
@@ -75,9 +76,9 @@ class BKTabBarController: UITabBarController {
         
     }
     
-    @objc func btnClick() {
+    @objc func composeBtnClick() {
         
-        print("click")
+        print(#function)
     }
     
 

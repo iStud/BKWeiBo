@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		52636441EEEBF95CD2C12EFB /* libPods-BKWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F2E4D96742F13617ED7AE0 /* libPods-BKWeiBo.a */; };
 		5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5815EF6120E5CA5F001635E3 /* AppDelegate.swift */; };
-		5815EF6420E5CA5F001635E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5815EF6320E5CA5F001635E3 /* ViewController.swift */; };
-		5815EF6720E5CA5F001635E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6520E5CA5F001635E3 /* Main.storyboard */; };
 		5815EF6920E5CA61001635E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6820E5CA61001635E3 /* Assets.xcassets */; };
 		5815EF6C20E5CA61001635E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */; };
 		586E5DF720E9CC910095A6A7 /* BKTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586E5DF620E9CC910095A6A7 /* BKTabBar.swift */; };
@@ -21,14 +19,20 @@
 		587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8120E61BBD009BBB79 /* BKMeController.swift */; };
 		587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8320E61BCC009BBB79 /* BKMessageController.swift */; };
 		587E2C8620E62D9A009BBB79 /* BKMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */; };
+		58B7475C21D354F100AFA7CF /* BKBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7475B21D354F100AFA7CF /* BKBaseController.swift */; };
+		58B7475E21D35C3500AFA7CF /* BKVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7475D21D35C3500AFA7CF /* BKVisitView.swift */; };
+		58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476121D3CDB200AFA7CF /* BKPopoverController.swift */; };
+		58B7476421D3CDC600AFA7CF /* BKPopoverController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B7476321D3CDC600AFA7CF /* BKPopoverController.storyboard */; };
+		58B7476721D3D54800AFA7CF /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476621D3D54800AFA7CF /* UIBarButtonItem+Category.swift */; };
+		58B7476921D4ADA700AFA7CF /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476821D4ADA700AFA7CF /* TitleButton.swift */; };
+		58B7476B21D4CBB500AFA7CF /* BKPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476A21D4CBB500AFA7CF /* BKPresentationController.swift */; };
+		58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25AAE77A7BFF99EE48156247 /* Pods-BKWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BKWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BKWeiBo/Pods-BKWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		5815EF5E20E5CA5F001635E3 /* BKWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BKWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5815EF6120E5CA5F001635E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5815EF6320E5CA5F001635E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5815EF6620E5CA5F001635E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5815EF6820E5CA61001635E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5815EF6B20E5CA61001635E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5815EF6D20E5CA61001635E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,14 @@
 		587E2C8120E61BBD009BBB79 /* BKMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMeController.swift; sourceTree = "<group>"; };
 		587E2C8320E61BCC009BBB79 /* BKMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMessageController.swift; sourceTree = "<group>"; };
 		587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMainNavigationController.swift; sourceTree = "<group>"; };
+		58B7475B21D354F100AFA7CF /* BKBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKBaseController.swift; sourceTree = "<group>"; };
+		58B7475D21D35C3500AFA7CF /* BKVisitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKVisitView.swift; sourceTree = "<group>"; };
+		58B7476121D3CDB200AFA7CF /* BKPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPopoverController.swift; sourceTree = "<group>"; };
+		58B7476321D3CDC600AFA7CF /* BKPopoverController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BKPopoverController.storyboard; sourceTree = "<group>"; };
+		58B7476621D3D54800AFA7CF /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		58B7476821D4ADA700AFA7CF /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		58B7476A21D4CBB500AFA7CF /* BKPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPresentationController.swift; sourceTree = "<group>"; };
+		58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPopoverDelegate.swift; sourceTree = "<group>"; };
 		9C38C71B38B1932554C3B9D3 /* Pods-BKWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BKWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BKWeiBo/Pods-BKWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		C3F2E4D96742F13617ED7AE0 /* libPods-BKWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BKWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +97,7 @@
 		5815EF6020E5CA5F001635E3 /* BKWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				58B7476521D3D4C400AFA7CF /* Common */,
 				587E2C7820E6157D009BBB79 /* Main */,
 				587E2C5620E5E425009BBB79 /* Compose */,
 				587E2C4620E5E425009BBB79 /* Discover */,
@@ -92,8 +105,6 @@
 				587E2C4A20E5E425009BBB79 /* Me */,
 				587E2C5220E5E425009BBB79 /* Message */,
 				5815EF6120E5CA5F001635E3 /* AppDelegate.swift */,
-				5815EF6320E5CA5F001635E3 /* ViewController.swift */,
-				5815EF6520E5CA5F001635E3 /* Main.storyboard */,
 				5815EF6820E5CA61001635E3 /* Assets.xcassets */,
 				5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */,
 				5815EF6D20E5CA61001635E3 /* Info.plist */,
@@ -179,6 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */,
+				58B7476121D3CDB200AFA7CF /* BKPopoverController.swift */,
+				58B7476321D3CDC600AFA7CF /* BKPopoverController.storyboard */,
+				58B7476A21D4CBB500AFA7CF /* BKPresentationController.swift */,
+				58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,10 +280,21 @@
 			isa = PBXGroup;
 			children = (
 				587E2C7920E615E2009BBB79 /* BKTabBarController.swift */,
+				58B7475B21D354F100AFA7CF /* BKBaseController.swift */,
 				587E2C8520E62D9A009BBB79 /* BKMainNavigationController.swift */,
 				586E5DF620E9CC910095A6A7 /* BKTabBar.swift */,
+				58B7475D21D35C3500AFA7CF /* BKVisitView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		58B7476521D3D4C400AFA7CF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				58B7476621D3D54800AFA7CF /* UIBarButtonItem+Category.swift */,
+				58B7476821D4ADA700AFA7CF /* TitleButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		FFAE4E806FEEC76E6F5CED8F /* Pods */ = {
@@ -342,9 +368,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B7476421D3CDC600AFA7CF /* BKPopoverController.storyboard in Resources */,
 				5815EF6C20E5CA61001635E3 /* LaunchScreen.storyboard in Resources */,
 				5815EF6920E5CA61001635E3 /* Assets.xcassets in Resources */,
-				5815EF6720E5CA5F001635E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,30 +420,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5815EF6420E5CA5F001635E3 /* ViewController.swift in Sources */,
+				58B7476921D4ADA700AFA7CF /* TitleButton.swift in Sources */,
+				58B7476721D3D54800AFA7CF /* UIBarButtonItem+Category.swift in Sources */,
 				587E2C8620E62D9A009BBB79 /* BKMainNavigationController.swift in Sources */,
 				586E5DF720E9CC910095A6A7 /* BKTabBar.swift in Sources */,
+				58B7476B21D4CBB500AFA7CF /* BKPresentationController.swift in Sources */,
+				58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */,
+				58B7475E21D35C3500AFA7CF /* BKVisitView.swift in Sources */,
 				587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */,
 				587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */,
 				587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */,
 				587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
+				58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */,
 				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
 				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,
+				58B7475C21D354F100AFA7CF /* BKBaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5815EF6520E5CA5F001635E3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5815EF6620E5CA5F001635E3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QV68YFEFE;
 				INFOPLIST_FILE = BKWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -566,6 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8QV68YFEFE;
 				INFOPLIST_FILE = BKWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

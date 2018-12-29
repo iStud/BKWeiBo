@@ -8,12 +8,17 @@
 
 import UIKit
 
-class BKMessageController: UIViewController {
+class BKMessageController: BKBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+        
+        if !isLogin {
+            
+            visitView?.setVisitInfo(isHome: false, imageName: "visitordiscover_image_message", message: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知")
+        }
     }
 
     override func didReceiveMemoryWarning() {
