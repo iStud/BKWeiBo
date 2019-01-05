@@ -1,4 +1,4 @@
-module Pods_BKWeiBo {
+framework module Pods_BKWeiBo {
   umbrella header "Pods-BKWeiBo-umbrella.h"
 
   export *

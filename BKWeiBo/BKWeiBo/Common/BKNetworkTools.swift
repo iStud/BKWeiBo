@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import AFNetworking
 
-class BKNetworkTools: NSObject {
+class BKNetworkTools: AFHTTPSessionManager {
     
 
-    private static let instance = BKNetworkTools()
-   
-    class var sharedNetworkTools: BKNetworkTools {
-        return instance
-    }
-
+    static let shareNetworkTools:BKNetworkTools = {
+        
+        let url = URL(string: "https://api.weibo.com/")
+        let tools = BKNetworkTools(baseURL:url)
+        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        return tools
+    }()
     
 
 }

@@ -14,15 +14,13 @@ import UIKit
 class BKBaseController: UITableViewController ,VisitViewDelegate{
     
 
-    var isLogin = false
+    var isLogin = BKUserCount.isLogin()
     var visitView:BKVisitView?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         isLogin ? super.loadView() :setVisitView()
-        
-        
         
     }
 
@@ -55,18 +53,16 @@ class BKBaseController: UITableViewController ,VisitViewDelegate{
         let nav = UINavigationController(rootViewController: oauthVC)
         present(nav, animated: true, completion: nil)
         
-        
-
     }
     
     @objc func registerBtnClick() {
         
         print(#function)
+        
+
+        
+
+        
     }
-    
-
-
-    
-
 
 }
