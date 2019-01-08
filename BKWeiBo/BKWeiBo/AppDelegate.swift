@@ -8,21 +8,26 @@
 
 import UIKit
 
+let SwitchMainNotification = "SwitchMainNotification"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
- 
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootVc = BKTabBarController()
+        let rootVc = defaultController()
         window?.rootViewController = rootVc;
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().tintColor = UIColor.orange
         
-       
+        
+        // 注册通知,切换控制器
+        NotificationCenter.default.addObserver(self, selector: #selector(switchMainController(noti:)), name: Notification.Name(SwitchMainNotification), object: nil)
+
         
         return true
     }
@@ -48,7 +53,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // 检查版本
+    func isNewVersion() -> Bool {
+        
+        // 当前版本
+        let currentStr = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+//        let currentStr = "2.0"
+        
+        let version = Double(currentStr)!
 
+//        print("当前版本" + currentStr)
+        
+        // 沙盒版本
+        let versionKey = "versionKey"
+        let sandboxVerson = UserDefaults.standard.double(forKey: versionKey)
+        
+        // 版本写入沙盒
+        UserDefaults.standard.set(version, forKey: versionKey)
+        
+//        print("沙盒版本"+"\(sandboxVerson)")
+        return version > sandboxVerson
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    
+    // 通知切换控制器
+    @objc func switchMainController(noti:Notification) {
+
+        if noti.object as! Bool{
+            
+            window?.rootViewController = BKTabBarController()
+            
+        }else{
+            
+           window?.rootViewController = BKWelcomeController()
+        }
+        
+    }
+    
+    // 设置默认控制器
+    func defaultController() -> UIViewController {
+        
+        // 是否登录
+        if BKUserCount.isLogin() {
+            
+            // 是否有新特性
+            return isNewVersion() ? BKNewFeatureController():BKWelcomeController()
+        }
+        return BKTabBarController()
+    }
 
 }
 

@@ -13,11 +13,22 @@
 
 import UIKit
 
+private let Identifier = "Identifier"
+
 class BKHomeController: BKBaseController {
     
     // 是否展开
     var isPresent:Bool = false
     var titleBtn = TitleButton()
+    
+    var modelArr:[BKStatuses]?{
+        
+        didSet{
+            
+            tableView.reloadData()
+        }
+    }
+    
     
 
     override func viewDidLoad() {
@@ -32,6 +43,18 @@ class BKHomeController: BKBaseController {
         }
         
         setNav()
+        
+        BKStatuses.loadData { (modelArr, error) in
+            
+            if error != nil{
+                
+                return
+            }
+            self.modelArr = modelArr
+        }
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifier)
+        
     }
 
     // MARK: - 设置 UI
@@ -168,5 +191,22 @@ class BKHomeController: BKBaseController {
 //
 //
 //}
+
+
+extension BKHomeController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return modelArr?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let statuses = modelArr![indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier, for: indexPath)
+
+        cell.textLabel?.text = statuses.text
+        return cell
+    }
+}
 
 

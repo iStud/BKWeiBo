@@ -86,6 +86,7 @@ class BKUserCount: NSObject,NSCoding{
     class func loadAccount() -> BKUserCount?{
         
         let account = NSKeyedUnarchiver.unarchiveObject(withFile: encodePath) as? BKUserCount
+        
         if (account != nil) {
             
             if account?.expiresDate?.compare(Date()) == ComparisonResult.orderedDescending {

@@ -12,6 +12,8 @@
 		5815EF6920E5CA61001635E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6820E5CA61001635E3 /* Assets.xcassets */; };
 		5815EF6C20E5CA61001635E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */; };
 		5830ADE321DE025D00799D3A /* String+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830ADE221DE025D00799D3A /* String+category.swift */; };
+		5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */; };
+		584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC6F21E450B500FFA813 /* BKStatuses.swift */; };
 		587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7920E615E2009BBB79 /* BKTabBarController.swift */; };
 		587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */; };
 		587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */; };
@@ -28,6 +30,8 @@
 		58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */; };
 		58B7476F21D73B6B00AFA7CF /* BKNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476E21D73B6B00AFA7CF /* BKNetworkTools.swift */; };
 		58B7477221D73E4500AFA7CF /* BKOAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7477121D73E4500AFA7CF /* BKOAuthController.swift */; };
+		58FFBDAB21E2F8F6002C2CCA /* BKNewFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFBDAA21E2F8F6002C2CCA /* BKNewFeatureCell.swift */; };
+		58FFBDAD21E33D34002C2CCA /* BKWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFBDAC21E33D34002C2CCA /* BKWelcomeController.swift */; };
 		80B2068E1A6F418F7AD288B2 /* Pods_BKWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8830D21C34AA198771E41271 /* Pods_BKWeiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,8 @@
 		5815EF6B20E5CA61001635E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5815EF6D20E5CA61001635E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5830ADE221DE025D00799D3A /* String+category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+category.swift"; sourceTree = "<group>"; };
+		5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewFeatureController.swift; sourceTree = "<group>"; };
+		584CDC6F21E450B500FFA813 /* BKStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKStatuses.swift; sourceTree = "<group>"; };
 		587E2C7920E615E2009BBB79 /* BKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKTabBarController.swift; sourceTree = "<group>"; };
 		587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKComposeController.swift; sourceTree = "<group>"; };
 		587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDiscoverController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,8 @@
 		58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPopoverDelegate.swift; sourceTree = "<group>"; };
 		58B7476E21D73B6B00AFA7CF /* BKNetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNetworkTools.swift; sourceTree = "<group>"; };
 		58B7477121D73E4500AFA7CF /* BKOAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKOAuthController.swift; sourceTree = "<group>"; };
+		58FFBDAA21E2F8F6002C2CCA /* BKNewFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewFeatureCell.swift; sourceTree = "<group>"; };
+		58FFBDAC21E33D34002C2CCA /* BKWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKWelcomeController.swift; sourceTree = "<group>"; };
 		8830D21C34AA198771E41271 /* Pods_BKWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BKWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C38C71B38B1932554C3B9D3 /* Pods-BKWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BKWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BKWeiBo/Pods-BKWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +121,7 @@
 		5815EF6020E5CA5F001635E3 /* BKWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				5830AE2021E2F31600799D3A /* NewFeature */,
 				58B7477021D73E1F00AFA7CF /* OAuth */,
 				58B7476521D3D4C400AFA7CF /* Common */,
 				587E2C7820E6157D009BBB79 /* Main */,
@@ -127,6 +136,16 @@
 				5815EF6D20E5CA61001635E3 /* Info.plist */,
 			);
 			path = BKWeiBo;
+			sourceTree = "<group>";
+		};
+		5830AE2021E2F31600799D3A /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */,
+				58FFBDAA21E2F8F6002C2CCA /* BKNewFeatureCell.swift */,
+				58FFBDAC21E33D34002C2CCA /* BKWelcomeController.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		587E2C4620E5E425009BBB79 /* Discover */ = {
@@ -218,6 +237,7 @@
 		587E2C5020E5E425009BBB79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				584CDC6F21E450B500FFA813 /* BKStatuses.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,7 +479,9 @@
 				58B7476721D3D54800AFA7CF /* UIBarButtonItem+Category.swift in Sources */,
 				58B7476B21D4CBB500AFA7CF /* BKPresentationController.swift in Sources */,
 				58B7476F21D73B6B00AFA7CF /* BKNetworkTools.swift in Sources */,
+				58FFBDAB21E2F8F6002C2CCA /* BKNewFeatureCell.swift in Sources */,
 				58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */,
+				58FFBDAD21E33D34002C2CCA /* BKWelcomeController.swift in Sources */,
 				58B7475E21D35C3500AFA7CF /* BKVisitView.swift in Sources */,
 				5830ADE321DE025D00799D3A /* String+category.swift in Sources */,
 				5814469F21DCA5890072F388 /* BKUserCount.swift in Sources */,
@@ -467,7 +489,9 @@
 				587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */,
 				587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */,
 				587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */,
+				5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
+				584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */,
 				58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */,
 				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
 				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,

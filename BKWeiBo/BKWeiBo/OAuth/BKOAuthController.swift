@@ -11,25 +11,26 @@ import AFNetworking
 
 class BKOAuthController: UIViewController {
     
-//    App Key：3003757086
-//    App Secret：f96b489c33e676f78e4d5e772689aca7
+    //    App Key：3003757086
+    //    App Secret：f96b489c33e676f78e4d5e772689aca7
     
     let appKey = "3003757086"
     let appSecret = "f96b489c33e676f78e4d5e772689aca7"
     let redirect_uri = "https://juejin.im/user/5c1860c451882569b0243242"
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-
+        
         setUI()
         loadOauthPage()
-
+        
     }
     
     func loadOauthPage() {
         
-
+        
         let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redirect_uri=\(redirect_uri)"
         let url = URL(string: urlStr)!
         let request =  URLRequest(url: url)
@@ -48,22 +49,22 @@ class BKOAuthController: UIViewController {
     
     
     
-
+    
     lazy var webView: UIWebView = {
         
         let web = UIWebView()
         web.delegate = self
         // 解决 iPhone x 出现 黑边问题
-//         原因是 黑边是因为scrollView发生了偏移。
-//        if #available(iOS 11.0, *) {
-//           web.scrollView.contentInsetAdjustmentBehavior = .never
-//        } else {
-//            automaticallyAdjustsScrollViewInsets = false
-//        }
+        //         原因是 黑边是因为scrollView发生了偏移。
+        //        if #available(iOS 11.0, *) {
+        //           web.scrollView.contentInsetAdjustmentBehavior = .never
+        //        } else {
+        //            automaticallyAdjustsScrollViewInsets = false
+        //        }
         
         web.isOpaque = false
         web.backgroundColor = UIColor.white
-      
+        
         return web
     }()
     
@@ -75,7 +76,7 @@ class BKOAuthController: UIViewController {
         print(#function)
         dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 extension BKOAuthController:UIWebViewDelegate{
@@ -119,7 +120,7 @@ extension BKOAuthController:UIWebViewDelegate{
         
         let url = "oauth2/access_token"
         
- 
+        
         // 获取 token 的请求
         BKNetworkTools.shareNetworkTools.post(url, parameters: dic, progress: nil, success: { (_, response) in
             
@@ -130,20 +131,22 @@ extension BKOAuthController:UIWebViewDelegate{
                 if(account != nil){
                     
                     // 保存用户信息
-                    account?.saveAccount()
+                    account!.saveAccount()
+                    NotificationCenter.default.post(name: Notification.Name(SwitchMainNotification), object: false)
+                    
                     
                 }else{
                     
                     print("网络错误")
                 }
             }
-        
+            
             
         }) { (_, error) in
             
             print(error)
         }
-
-    
+        
+        
     }
 }

@@ -7,8 +7,6 @@
 //
 
 
-
-
 import UIKit
 
 class BKBaseController: UITableViewController ,VisitViewDelegate{
@@ -47,8 +45,6 @@ class BKBaseController: UITableViewController ,VisitViewDelegate{
     // MARK: - VisitViewDelegate
     @objc func loginBtnClick() {
         
-        print(#function)
-        
         let oauthVC = BKOAuthController()
         let nav = UINavigationController(rootViewController: oauthVC)
         present(nav, animated: true, completion: nil)
@@ -58,9 +54,6 @@ class BKBaseController: UITableViewController ,VisitViewDelegate{
     @objc func registerBtnClick() {
         
         print(#function)
-        
-
-        
 
         
     }
