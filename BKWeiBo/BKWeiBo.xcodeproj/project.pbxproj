@@ -14,6 +14,11 @@
 		5830ADE321DE025D00799D3A /* String+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830ADE221DE025D00799D3A /* String+category.swift */; };
 		5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */; };
 		584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC6F21E450B500FFA813 /* BKStatuses.swift */; };
+		584CDC7421E4A54400FFA813 /* BKStatusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */; };
+		584CDC7621E4C2C600FFA813 /* BKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC7521E4C2C600FFA813 /* BKUser.swift */; };
+		584CDC9621E5A52E00FFA813 /* Date+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC9521E5A52E00FFA813 /* Date+Category.swift */; };
+		584CDCB621E72E5800FFA813 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDCB521E72E5700FFA813 /* UILabel+Category.swift */; };
+		584CDCB821E730F200FFA813 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDCB721E730F200FFA813 /* UIButton+Category.swift */; };
 		587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7920E615E2009BBB79 /* BKTabBarController.swift */; };
 		587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */; };
 		587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */; };
@@ -58,6 +63,11 @@
 		5830ADE221DE025D00799D3A /* String+category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+category.swift"; sourceTree = "<group>"; };
 		5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewFeatureController.swift; sourceTree = "<group>"; };
 		584CDC6F21E450B500FFA813 /* BKStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKStatuses.swift; sourceTree = "<group>"; };
+		584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKStatusesCell.swift; sourceTree = "<group>"; };
+		584CDC7521E4C2C600FFA813 /* BKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKUser.swift; sourceTree = "<group>"; };
+		584CDC9521E5A52E00FFA813 /* Date+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Category.swift"; sourceTree = "<group>"; };
+		584CDCB521E72E5700FFA813 /* UILabel+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
+		584CDCB721E730F200FFA813 /* UIButton+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		587E2C7920E615E2009BBB79 /* BKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKTabBarController.swift; sourceTree = "<group>"; };
 		587E2C7B20E61A0F009BBB79 /* BKComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKComposeController.swift; sourceTree = "<group>"; };
 		587E2C7D20E61A2C009BBB79 /* BKDiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDiscoverController.swift; sourceTree = "<group>"; };
@@ -238,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				584CDC6F21E450B500FFA813 /* BKStatuses.swift */,
+				584CDC7521E4C2C600FFA813 /* BKUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 		587E2C5120E5E425009BBB79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +342,9 @@
 				58B7476821D4ADA700AFA7CF /* TitleButton.swift */,
 				58B7476E21D73B6B00AFA7CF /* BKNetworkTools.swift */,
 				5830ADE221DE025D00799D3A /* String+category.swift */,
+				584CDC9521E5A52E00FFA813 /* Date+Category.swift */,
+				584CDCB521E72E5700FFA813 /* UILabel+Category.swift */,
+				584CDCB721E730F200FFA813 /* UIButton+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -476,8 +491,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B7476921D4ADA700AFA7CF /* TitleButton.swift in Sources */,
+				584CDC9621E5A52E00FFA813 /* Date+Category.swift in Sources */,
 				58B7476721D3D54800AFA7CF /* UIBarButtonItem+Category.swift in Sources */,
 				58B7476B21D4CBB500AFA7CF /* BKPresentationController.swift in Sources */,
+				584CDC7621E4C2C600FFA813 /* BKUser.swift in Sources */,
 				58B7476F21D73B6B00AFA7CF /* BKNetworkTools.swift in Sources */,
 				58FFBDAB21E2F8F6002C2CCA /* BKNewFeatureCell.swift in Sources */,
 				58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */,
@@ -491,10 +508,13 @@
 				587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */,
 				5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
+				584CDCB621E72E5800FFA813 /* UILabel+Category.swift in Sources */,
+				584CDCB821E730F200FFA813 /* UIButton+Category.swift in Sources */,
 				584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */,
 				58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */,
 				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
 				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,
+				584CDC7421E4A54400FFA813 /* BKStatusesCell.swift in Sources */,
 				58B7477221D73E4500AFA7CF /* BKOAuthController.swift in Sources */,
 				58B7475C21D354F100AFA7CF /* BKBaseController.swift in Sources */,
 			);

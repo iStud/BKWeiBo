@@ -53,8 +53,8 @@ class BKHomeController: BKBaseController {
             self.modelArr = modelArr
         }
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifier)
-        
+        tableView.register(BKStatusesCell.self, forCellReuseIdentifier: Identifier)
+
     }
 
     // MARK: - 设置 UI
@@ -72,6 +72,8 @@ class BKHomeController: BKBaseController {
 //        let lastY:CGFloat = (navigationItem.titleView?.frame.maxY)!
 //        print(lastY)
         
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
 
     }
     
@@ -202,11 +204,30 @@ extension BKHomeController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let statuses = modelArr![indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier, for: indexPath)
-
-        cell.textLabel?.text = statuses.text
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier, for: indexPath) as! BKStatusesCell
+        
+        cell.statuses = statuses
+        cell.layoutIfNeeded()
+        
+        print("先", cell.statuses!.rowHeight)
+        
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+////        let statuses = modelArr![indexPath.row]
+////        print("后",statuses.rowHeight)
+////        return CGFloat(statuses.rowHeight)
+//
+//        return 250;
+//    }
+    
+
+    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 200
+//    }
 }
 
 

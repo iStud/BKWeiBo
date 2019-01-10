@@ -14,10 +14,13 @@ class BKOAuthController: UIViewController {
     //    App Key：3003757086
     //    App Secret：f96b489c33e676f78e4d5e772689aca7
     
-    let appKey = "3003757086"
-    let appSecret = "f96b489c33e676f78e4d5e772689aca7"
-    let redirect_uri = "https://juejin.im/user/5c1860c451882569b0243242"
+    let appKey = "2332464734"
+    let appSecret = "90823de42ee0dda927c57074e84f87ad"
+    let redirect_uri = "https://nba.hupu.com"
     
+    // App Key：2332464734
+//    App Secret：90823de42ee0dda927c57074e84f87ad
+//    https://nba.hupu.com
     
     override func viewDidLoad() {
         super.viewDidLoad()

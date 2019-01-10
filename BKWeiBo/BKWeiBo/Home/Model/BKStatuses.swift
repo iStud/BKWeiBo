@@ -10,14 +10,50 @@ import UIKit
 
 class BKStatuses: NSObject {
     
+    var rowHeight:Float=0
+
     /// 微博ID
     @objc var id:Int = 0
     /// 微博信息内容
     @objc var text:String?
     /// 微博创建时间
-    @objc var created_at:String?
+    @objc var created_at:String?{
+        
+        didSet{
+//            created_at = "Wed Nov 9 16:42:11 +0800 2018"
+            let createdDate = Date.dateStr2Date(time: created_at!)
+            created_at = createdDate.descDate
+            
+        }
+        
+    }
     /// 微博来源
-    @objc var source:String?
+    @objc var source:String?{
+        
+        didSet{
+            
+            //截取字符串
+            // <a href="http://weibo.com/" rel="nofollow">iPhone客户端</a>
+            if let str = source{
+                
+                if str == ""{
+                    
+                    return
+                }
+//                String[Range<String.Index>]
+                let start = str.range(of: ">")
+                let end = str.range(of: "</")
+                source = "来自" + "\(str[start!.upperBound ..< end!.lowerBound])"
+
+            }
+        }
+    }
+
+    @objc var pic_urls: [[String: AnyObject]]?
+    
+    @objc var user:BKUser?
+    
+    
     
     init(dict:[String:Any]) {
         
@@ -44,7 +80,7 @@ class BKStatuses: NSObject {
             let result = json as![String:Any]
             let modelArr = dic2Model(list: result["statuses"] as! [[String : Any]])
             finish(modelArr,nil)
-            print(modelArr)
+
             
         }) { (_, error) in
             
@@ -66,7 +102,19 @@ class BKStatuses: NSObject {
         return modelArr
     }
     
-    var properties = ["created_at", "id", "text", "source"]
+    override func setValue(_ value: Any?, forKey key: String) {
+        
+        if "user" == key {
+            
+            user = BKUser(dict: value as! [String:Any])
+            
+            return
+        }
+        
+        super.setValue(value, forKey: key)
+    }
+    
+    var properties = ["created_at", "id", "text", "source","pic_urls","user"]
     override var description: String{
 
         let dic = dictionaryWithValues(forKeys: properties)
