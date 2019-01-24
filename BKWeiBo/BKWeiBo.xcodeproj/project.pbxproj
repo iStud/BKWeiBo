@@ -25,6 +25,9 @@
 		587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */; };
 		587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8120E61BBD009BBB79 /* BKMeController.swift */; };
 		587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587E2C8320E61BCC009BBB79 /* BKMessageController.swift */; };
+		588C2C5F21ECAD33007CD318 /* datajson.json in Sources */ = {isa = PBXBuildFile; fileRef = 588C2C5E21ECAD33007CD318 /* datajson.json */; };
+		588C2C6121ECB009007CD318 /* BKPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C2C6021ECB009007CD318 /* BKPictureView.swift */; };
+		588C2C6321EDD76D007CD318 /* BKMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588C2C6221EDD76D007CD318 /* BKMTableViewCell.swift */; };
 		58B7475C21D354F100AFA7CF /* BKBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7475B21D354F100AFA7CF /* BKBaseController.swift */; };
 		58B7475E21D35C3500AFA7CF /* BKVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7475D21D35C3500AFA7CF /* BKVisitView.swift */; };
 		58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476121D3CDB200AFA7CF /* BKPopoverController.swift */; };
@@ -35,6 +38,8 @@
 		58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */; };
 		58B7476F21D73B6B00AFA7CF /* BKNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7476E21D73B6B00AFA7CF /* BKNetworkTools.swift */; };
 		58B7477221D73E4500AFA7CF /* BKOAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7477121D73E4500AFA7CF /* BKOAuthController.swift */; };
+		58EAC0BB21F80DE8000CA4D9 /* BKRetweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EAC0BA21F80DE8000CA4D9 /* BKRetweetCell.swift */; };
+		58EAC0BD21F85866000CA4D9 /* BKNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EAC0BC21F85866000CA4D9 /* BKNormalCell.swift */; };
 		58FFBDAB21E2F8F6002C2CCA /* BKNewFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFBDAA21E2F8F6002C2CCA /* BKNewFeatureCell.swift */; };
 		58FFBDAD21E33D34002C2CCA /* BKWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FFBDAC21E33D34002C2CCA /* BKWelcomeController.swift */; };
 		80B2068E1A6F418F7AD288B2 /* Pods_BKWeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8830D21C34AA198771E41271 /* Pods_BKWeiBo.framework */; };
@@ -74,6 +79,9 @@
 		587E2C7F20E61BAD009BBB79 /* BKHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKHomeController.swift; sourceTree = "<group>"; };
 		587E2C8120E61BBD009BBB79 /* BKMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMeController.swift; sourceTree = "<group>"; };
 		587E2C8320E61BCC009BBB79 /* BKMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMessageController.swift; sourceTree = "<group>"; };
+		588C2C5E21ECAD33007CD318 /* datajson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = datajson.json; sourceTree = "<group>"; };
+		588C2C6021ECB009007CD318 /* BKPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPictureView.swift; sourceTree = "<group>"; };
+		588C2C6221EDD76D007CD318 /* BKMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMTableViewCell.swift; sourceTree = "<group>"; };
 		58B7475B21D354F100AFA7CF /* BKBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKBaseController.swift; sourceTree = "<group>"; };
 		58B7475D21D35C3500AFA7CF /* BKVisitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKVisitView.swift; sourceTree = "<group>"; };
 		58B7476121D3CDB200AFA7CF /* BKPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPopoverController.swift; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPopoverDelegate.swift; sourceTree = "<group>"; };
 		58B7476E21D73B6B00AFA7CF /* BKNetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNetworkTools.swift; sourceTree = "<group>"; };
 		58B7477121D73E4500AFA7CF /* BKOAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKOAuthController.swift; sourceTree = "<group>"; };
+		58EAC0BA21F80DE8000CA4D9 /* BKRetweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKRetweetCell.swift; sourceTree = "<group>"; };
+		58EAC0BC21F85866000CA4D9 /* BKNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNormalCell.swift; sourceTree = "<group>"; };
 		58FFBDAA21E2F8F6002C2CCA /* BKNewFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewFeatureCell.swift; sourceTree = "<group>"; };
 		58FFBDAC21E33D34002C2CCA /* BKWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKWelcomeController.swift; sourceTree = "<group>"; };
 		8830D21C34AA198771E41271 /* Pods_BKWeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BKWeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */,
+				58EAC0BA21F80DE8000CA4D9 /* BKRetweetCell.swift */,
+				58EAC0BC21F85866000CA4D9 /* BKNormalCell.swift */,
+				588C2C6021ECB009007CD318 /* BKPictureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				587E2C8320E61BCC009BBB79 /* BKMessageController.swift */,
+				588C2C6221EDD76D007CD318 /* BKMTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 				584CDC9521E5A52E00FFA813 /* Date+Category.swift */,
 				584CDCB521E72E5700FFA813 /* UILabel+Category.swift */,
 				584CDCB721E730F200FFA813 /* UIButton+Category.swift */,
+				588C2C5E21ECAD33007CD318 /* datajson.json */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -493,8 +508,10 @@
 				58B7476921D4ADA700AFA7CF /* TitleButton.swift in Sources */,
 				584CDC9621E5A52E00FFA813 /* Date+Category.swift in Sources */,
 				58B7476721D3D54800AFA7CF /* UIBarButtonItem+Category.swift in Sources */,
+				58EAC0BD21F85866000CA4D9 /* BKNormalCell.swift in Sources */,
 				58B7476B21D4CBB500AFA7CF /* BKPresentationController.swift in Sources */,
 				584CDC7621E4C2C600FFA813 /* BKUser.swift in Sources */,
+				588C2C6121ECB009007CD318 /* BKPictureView.swift in Sources */,
 				58B7476F21D73B6B00AFA7CF /* BKNetworkTools.swift in Sources */,
 				58FFBDAB21E2F8F6002C2CCA /* BKNewFeatureCell.swift in Sources */,
 				58B7476D21D62D0A00AFA7CF /* BKPopoverDelegate.swift in Sources */,
@@ -509,8 +526,11 @@
 				5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
 				584CDCB621E72E5800FFA813 /* UILabel+Category.swift in Sources */,
+				588C2C6321EDD76D007CD318 /* BKMTableViewCell.swift in Sources */,
 				584CDCB821E730F200FFA813 /* UIButton+Category.swift in Sources */,
 				584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */,
+				588C2C5F21ECAD33007CD318 /* datajson.json in Sources */,
+				58EAC0BB21F80DE8000CA4D9 /* BKRetweetCell.swift in Sources */,
 				58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */,
 				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
 				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,

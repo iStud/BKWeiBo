@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BKStatuses: NSObject {
     
-    var rowHeight:Float=0
-
+    
+//    lazy var rowHeight: CGFloat = {
+//        
+//        // 实例化 cell
+//        let cell = BKStatusesCell(style:.default, reuseIdentifier: "imgCell")
+//        
+//        // 返回行高
+//        return cell.rowHeigt(model: self)
+//    }()
+    
     /// 微博ID
     @objc var id:Int = 0
     /// 微博信息内容
@@ -20,7 +29,7 @@ class BKStatuses: NSObject {
     @objc var created_at:String?{
         
         didSet{
-//            created_at = "Wed Nov 9 16:42:11 +0800 2018"
+            //            created_at = "Wed Nov 9 16:42:11 +0800 2018"
             let createdDate = Date.dateStr2Date(time: created_at!)
             created_at = createdDate.descDate
             
@@ -40,20 +49,47 @@ class BKStatuses: NSObject {
                     
                     return
                 }
-//                String[Range<String.Index>]
+                //                String[Range<String.Index>]
                 let start = str.range(of: ">")
                 let end = str.range(of: "</")
-                source = "来自" + "\(str[start!.upperBound ..< end!.lowerBound])"
-
+                source = "来自 " + "\(str[start!.upperBound ..< end!.lowerBound])"
+                
             }
         }
     }
-
-    @objc var pic_urls: [[String: AnyObject]]?
     
+    /// 图片数组
+    @objc var pic_urls: [[String: AnyObject]]?{
+        
+        // 只要属性数值改变了,就把 URL字典中剥离,并保存
+        didSet{
+            
+            urlArr = [URL]()
+            for dic in pic_urls!{
+                
+                if let urlStr = dic["thumbnail_pic"]{
+                    
+                    urlArr?.append(URL(string: urlStr as! String)!)
+                }
+            }
+        }
+    }
+    
+    /// 图片 URL 数组
+    var urlArr:[URL]?
+    
+    /// 用户模型
     @objc var user:BKUser?
     
+    /// 转发微博的数据
+    var retweetedStatus:BKStatuses?
     
+    /// 转发微博 URL 数组
+    // get 方法,计算属性
+    var retweetUrlArr:[URL]?{
+        
+        return retweetedStatus != nil ? retweetedStatus?.urlArr : urlArr
+    }
     
     init(dict:[String:Any]) {
         
@@ -62,12 +98,12 @@ class BKStatuses: NSObject {
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-       
+        
     }
     
-//    override func setValue(_ value: Any?, forKey key: String) {
-//        super.setValue(value, forKey: key)
-//    }
+    //    override func setValue(_ value: Any?, forKey key: String) {
+    //        super.setValue(value, forKey: key)
+    //    }
     
     class func loadData(finish:@escaping (_ modelArr:[BKStatuses]?,_ error:Error?)->()) {
         
@@ -79,8 +115,11 @@ class BKStatuses: NSObject {
             // 字典转模型
             let result = json as![String:Any]
             let modelArr = dic2Model(list: result["statuses"] as! [[String : Any]])
-            finish(modelArr,nil)
 
+            // 缓存图片
+            cacheImage(modelArr: modelArr, finish: finish)
+//            finish(modelArr,nil)
+            
             
         }) { (_, error) in
             
@@ -90,10 +129,10 @@ class BKStatuses: NSObject {
     }
     
     // 字典转模型
-   class func dic2Model(list:[[String:Any]]) -> [BKStatuses] {
+    class func dic2Model(list:[[String:Any]]) -> [BKStatuses] {
         
         var modelArr = [BKStatuses]()
-    
+        
         // 遍历字典数组
         for dic in list {
             
@@ -111,12 +150,58 @@ class BKStatuses: NSObject {
             return
         }
         
+        if "retweeted_status" == key {
+            
+            retweetedStatus = BKStatuses(dict: value as! [String:Any])
+        }
+        
         super.setValue(value, forKey: key)
     }
     
+    // 缓存图片
+    class func cacheImage(modelArr:[BKStatuses],finish:@escaping (_ modelArr:[BKStatuses]?,_ error:Error?)->()) {
+        
+        // 创建组
+        let group = DispatchGroup()
+        
+        // 遍历模型数组
+        for dic in modelArr{
+            
+            if dic.retweetUrlArr == nil{
+                
+                continue
+            }
+            
+            // 已经提前把 url 从字典中取出了
+            for url in dic.retweetUrlArr!{
+                
+                group.enter()
+                
+                // 使用 sdwebimage 缓存图片
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: url, options: SDWebImageDownloaderOptions(rawValue: 0), progress: nil, completed: { (_, _, _, _) in
+                    
+//                    print(url)
+                    group.leave()
+                })
+            }
+            
+        }
+        
+        // 通知组
+        group.notify(queue: DispatchQueue.main) {
+            
+//            print("结束缓存")
+            finish(modelArr,nil)
+        }
+        
+    }
+    
+    
+    
+    
     var properties = ["created_at", "id", "text", "source","pic_urls","user"]
     override var description: String{
-
+        
         let dic = dictionaryWithValues(forKeys: properties)
         return "\(dic)"
     }

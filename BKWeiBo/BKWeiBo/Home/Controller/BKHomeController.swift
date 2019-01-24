@@ -13,7 +13,8 @@
 
 import UIKit
 
-private let Identifier = "Identifier"
+private let CellIdentifier = "CellIdentifier"
+
 
 class BKHomeController: BKBaseController {
     
@@ -53,8 +54,8 @@ class BKHomeController: BKBaseController {
             self.modelArr = modelArr
         }
         
-        tableView.register(BKStatusesCell.self, forCellReuseIdentifier: Identifier)
-
+        tableView.register(BKNormalCell.self, forCellReuseIdentifier:statusCellIdentifier.NormalCell.rawValue)
+        tableView.register(BKRetweetCell.self, forCellReuseIdentifier: statusCellIdentifier.RetweetCell.rawValue)
     }
 
     // MARK: - 设置 UI
@@ -69,11 +70,9 @@ class BKHomeController: BKBaseController {
         navigationItem.titleView = titleBtn
         titleBtn.addTarget(self, action: #selector(titleBtnClick(btn:)), for: .touchUpInside)
         
-//        let lastY:CGFloat = (navigationItem.titleView?.frame.maxY)!
-//        print(lastY)
-        
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 500
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = 400
 
     }
     
@@ -111,88 +110,19 @@ class BKHomeController: BKBaseController {
         return pop
     }()
     
+    
+    var rowCache:[Int:CGFloat] = [Int:CGFloat]()
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        rowCache.removeAll()
     }
     
     
     
 }
-
-//extension BKHomeController:UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning {
-//
-//    // MARK: - UIViewControllerAnimatedTransitioning
-//    // 动画时长
-//    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-//
-//        return 0.5
-//    }
-//
-//    // 如何动画
-//    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-//
-//        titleBtn.isSelected = isPresent
-//
-//        if isPresent {
-//
-//            // transform 动画
-//            let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)
-//            toView?.transform = CGAffineTransform(scaleX: 1.0, y: 0.0)
-//            toView?.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
-//            transitionContext.containerView .addSubview(toView!)
-//
-//            UIView.animate(withDuration: 0.5, animations: {
-//
-//                toView?.transform = CGAffineTransform.identity
-//
-//            }) { (_) in
-//
-//                transitionContext.completeTransition(true)
-//            }
-//
-//        }else{
-//
-//            let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)
-//            UIView .animate(withDuration: 0.5, animations: {
-//
-//                fromView?.transform = CGAffineTransform(scaleX: 1.0, y: 0.00001)
-//
-//            }) { (_) in
-//
-//                transitionContext.completeTransition(true)
-//            }
-//
-//        }
-//
-//
-//
-//    }
-//
-//    // MARK: - UIViewControllerTransitioningDelegate
-//
-//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-//
-//        return BKPresentationController(presentedViewController: presented, presenting: presenting)
-//    }
-//
-//    // 设置谁负责动画
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//
-//        isPresent = true
-//
-//        return self
-//    }
-//
-//    // 设置负责消失动画
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//
-//        isPresent = false
-//        return self
-//    }
-//
-//
-//}
 
 
 extension BKHomeController{
@@ -204,30 +134,34 @@ extension BKHomeController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let statuses = modelArr![indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier, for: indexPath) as! BKStatusesCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: statusCellIdentifier.cellID(status: statuses), for: indexPath) as! BKStatusesCell
         
         cell.statuses = statuses
-        cell.layoutIfNeeded()
-        
-        print("先", cell.statuses!.rowHeight)
-        
+
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-////        let statuses = modelArr![indexPath.row]
-////        print("后",statuses.rowHeight)
-////        return CGFloat(statuses.rowHeight)
-//
-//        return 250;
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        let statuses = modelArr![indexPath.row]
+        
+        if let height = rowCache[statuses.id] {
+            
+//            print("缓存中获取")
+            return height
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:statusCellIdentifier.cellID(status: statuses))as!BKStatusesCell
+        
+        let height = cell.getHeight(model: statuses)
+        
+        rowCache[statuses.id] = height
+//         print("重新计算")
+        return height
+    }
     
 
-    
-//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
 }
 
 
