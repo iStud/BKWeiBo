@@ -150,7 +150,7 @@ class BKStatusesCell: UITableViewCell {
         
         // 2.设置数据源
         pictureView.dataSource = self
-        
+        pictureView.delegate = self
         // 2.设置cell之间的间隙
         pictureLayout.minimumInteritemSpacing = 10
         pictureLayout.minimumLineSpacing = 10
@@ -349,7 +349,7 @@ class PictureViewCell: UICollectionViewCell {
     }
 }
 
-extension BKStatusesCell:UICollectionViewDataSource{
+extension BKStatusesCell:UICollectionViewDataSource,UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -368,6 +368,12 @@ extension BKStatusesCell:UICollectionViewDataSource{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let url = values?.urlArr![indexPath.item]
+        print(url)
+        print(indexPath.item)
+    }
     
     
 }

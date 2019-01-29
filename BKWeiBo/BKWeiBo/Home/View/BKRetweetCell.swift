@@ -57,7 +57,7 @@ class BKRetweetCell: BKStatusesCell {
     lazy var backButton: UIButton = {
         
         let btn = UIButton()
-        btn.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
+        btn.backgroundColor = UIColor.init(white: 0.9, alpha: 0.5)
         return btn
         
     }()

@@ -43,16 +43,15 @@ class BKHomeController: BKBaseController {
             return
         }
         
+        // 设置导航
         setNav()
         
-        BKStatuses.loadData { (modelArr, error) in
-            
-            if error != nil{
-                
-                return
-            }
-            self.modelArr = modelArr
-        }
+        // 设置刷新
+        refreshControl = BKRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(loadData), for:.valueChanged)
+        
+        loadData()
+        
         
         tableView.register(BKNormalCell.self, forCellReuseIdentifier:statusCellIdentifier.NormalCell.rawValue)
         tableView.register(BKRetweetCell.self, forCellReuseIdentifier: statusCellIdentifier.RetweetCell.rawValue)
@@ -75,6 +74,58 @@ class BKHomeController: BKBaseController {
 //        tableView.rowHeight = 400
 
     }
+    
+    var pullupRefreshFlag = false
+    
+    @objc func loadData() {
+        
+        // 设置下拉刷新的 since id
+        var since_id = modelArr?.first?.id ?? 0
+        
+        // 设置上拉加载更多 id
+        var max_id =  0
+        
+        // 上拉 since_id = 0
+        if pullupRefreshFlag {
+            
+            since_id = 0
+            max_id = modelArr?.last?.id ?? 0
+        }
+        
+        
+        // 加载数据
+        BKStatuses.loadData(since_id: since_id,max_id :max_id) { (modelArr, error) in
+            
+            self.refreshControl?.endRefreshing()
+            
+            if error != nil{
+                
+                return
+            }
+            
+            // 下拉刷新
+            if since_id > 0 {
+                
+                self.modelArr = modelArr! + self.modelArr!
+                
+                // 设置动画
+                
+                
+                
+            }else if (max_id > 0){
+                
+                self.modelArr = self.modelArr! + modelArr!
+            }
+            else{
+                
+                self.modelArr = modelArr
+            }
+            
+            
+        }
+    }
+    
+    
     
     // MARK: - 按钮点击方法
     @objc func titleBtnClick(btn:UIButton){
@@ -133,12 +184,24 @@ extension BKHomeController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
         let statuses = modelArr![indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: statusCellIdentifier.cellID(status: statuses), for: indexPath) as! BKStatusesCell
         
         cell.statuses = statuses
-
+        
+        
+        // 上拉加载更多
+        let count = modelArr?.count ?? 0
+        if indexPath.row == count - 1 {
+            
+            print("上拉加载更多")
+            pullupRefreshFlag = true
+            loadData()
+        }
+        
         return cell
     }
     

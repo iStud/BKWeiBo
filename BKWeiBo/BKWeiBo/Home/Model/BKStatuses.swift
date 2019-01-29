@@ -78,6 +78,9 @@ class BKStatuses: NSObject {
     /// 图片 URL 数组
     var urlArr:[URL]?
     
+    /// 大图数组
+    
+    
     /// 用户模型
     @objc var user:BKUser?
     
@@ -105,11 +108,24 @@ class BKStatuses: NSObject {
     //        super.setValue(value, forKey: key)
     //    }
     
-    class func loadData(finish:@escaping (_ modelArr:[BKStatuses]?,_ error:Error?)->()) {
+    class func loadData(since_id:Int,max_id:Int,finish:@escaping (_ modelArr:[BKStatuses]?,_ error:Error?)->()) {
         
         let url = "2/statuses/home_timeline.json"
         let token = BKUserCount.loadAccount()?.access_token
-        let dic = ["access_token":token]
+        var dic = ["access_token":token]
+        
+        // 下拉刷新
+        if since_id > 0 {
+            
+            dic["since_id"] = "\(since_id)"
+        }
+        
+        if max_id > 0 {
+            
+            dic["max_id"] = "\(max_id - 1)"
+        }
+        
+        
         BKNetworkTools.shareNetworkTools.get(url, parameters: dic, progress: nil, success: { (_, json) in
             
             // 字典转模型
@@ -160,6 +176,13 @@ class BKStatuses: NSObject {
     
     // 缓存图片
     class func cacheImage(modelArr:[BKStatuses],finish:@escaping (_ modelArr:[BKStatuses]?,_ error:Error?)->()) {
+        
+        // 没有刷新到新的数据的时候调用
+        if modelArr.count == 0 {
+            
+            finish(modelArr,nil)
+            return
+        }
         
         // 创建组
         let group = DispatchGroup()
