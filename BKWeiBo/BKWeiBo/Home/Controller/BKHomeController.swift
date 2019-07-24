@@ -16,8 +16,8 @@ import UIKit
 private let CellIdentifier = "CellIdentifier"
 
 
-class BKHomeController: BKBaseController {
-    
+class BKHomeController: BKBaseController,PictureViewDelegate {
+
     // 是否展开
     var isPresent:Bool = false
     var titleBtn = TitleButton()
@@ -111,7 +111,6 @@ class BKHomeController: BKBaseController {
                 // 设置动画
                 
                 
-                
             }else if (max_id > 0){
                 
                 self.modelArr = self.modelArr! + modelArr!
@@ -171,6 +170,12 @@ class BKHomeController: BKBaseController {
         rowCache.removeAll()
     }
     
+    // MARK: - PictureViewDelegate    
+    func popBrowseController(index: Int, urls: [URL]) {
+        
+        let browseVc = BKBrowseController(urls: urls, index: index)
+        present(browseVc, animated: true, completion: nil)
+    }
     
     
 }
@@ -191,7 +196,7 @@ extension BKHomeController{
         let cell = tableView.dequeueReusableCell(withIdentifier: statusCellIdentifier.cellID(status: statuses), for: indexPath) as! BKStatusesCell
         
         cell.statuses = statuses
-        
+        cell.delegate = self
         
         // 上拉加载更多
         let count = modelArr?.count ?? 0

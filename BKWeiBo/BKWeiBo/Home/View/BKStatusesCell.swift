@@ -24,15 +24,23 @@ enum statusCellIdentifier:String {
     }
 }
 
+protocol PictureViewDelegate:NSObjectProtocol {
+    
+    
+    func popBrowseController(index:Int,urls:[URL])
+    
+}
+
+
 class BKStatusesCell: UITableViewCell {
     
-   
     var values:BKStatuses?
+    weak var delegate:PictureViewDelegate?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupUI()
-        
         // 初始化配图
         setupPictureView()
     }
@@ -230,13 +238,18 @@ class BKStatusesCell: UITableViewCell {
         if count == 1
         {
             
-            let key = values?.urlArr!.first?.absoluteString
-            let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: key)
-
-//            print("一张图")
-//            print("\(image!.size)")
+//             iconImageView.sd_setImage(with:imageURL)
             
-            return (image?.size ?? CGSize(width: 0, height: 0) , image?.size ?? CGSize(width: 0, height: 0))
+            let key = values?.urlArr!.first?.absoluteString
+            
+            let image = SDWebImageManager.shared().imageCache?.imageFromCache(forKey: key!)
+//            print(key)
+//            print("doc".docDir())
+            print("一张图")
+//            print(key)
+//            print(image?.size)
+            return (image?.size ?? CGSize(width: 0, height: 0 ),image?.size ?? CGSize(width: 0, height: 0))
+
            
         }
         // 4.如果有4张配图, 计算田字格的大小
@@ -276,8 +289,7 @@ class BKStatusesCell: UITableViewCell {
         didSet{
             
             values = statuses?.retweetedStatus != nil ? statuses?.retweetedStatus : statuses
-            
-//            print(statuses?.retweetedStatus)
+        
             
             contentLabel.text = statuses!.text
             sourceLabel.text = statuses?.source
@@ -303,17 +315,10 @@ class BKStatusesCell: UITableViewCell {
 //                make.height.equalTo(size.viewSize.height)
             }
             pictureView.reloadData()
-          
-
         }
     }
     
-    
-   
-    
 }
-
-
 
 class PictureViewCell: UICollectionViewCell {
     
@@ -369,13 +374,12 @@ extension BKStatusesCell:UICollectionViewDataSource,UICollectionViewDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let url = values?.urlArr![indexPath.item]
-        print(url)
+
+        let urls = values?.lageUrlArr
         print(indexPath.item)
+        delegate?.popBrowseController(index: indexPath.item, urls: urls!)
+        
     }
-    
-    
 }
 
 
@@ -416,7 +420,6 @@ class BottomBar: UIView {
     
     
     lazy var reposeBtn: UIButton = UIButton.createButton(buttonName: "转发", font: 13, titleColor: UIColor.darkGray,imageName: "timeline_icon_retweet")
-    
     
     lazy var commentBtn: UIButton = UIButton.createButton(buttonName: "评论", font: 13, titleColor: UIColor.darkGray,imageName: "timeline_icon_comment")
     

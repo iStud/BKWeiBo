@@ -13,6 +13,9 @@
 		5815EF6C20E5CA61001635E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5815EF6A20E5CA61001635E3 /* LaunchScreen.storyboard */; };
 		5830ADE321DE025D00799D3A /* String+category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830ADE221DE025D00799D3A /* String+category.swift */; };
 		5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */; };
+		583A573922169D290066337E /* BKBrowseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583A573822169D290066337E /* BKBrowseController.swift */; };
+		583A573B2216BF7F0066337E /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583A573A2216BF7F0066337E /* UIColor+Category.swift */; };
+		583A573D221A91470066337E /* BKPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583A573C221A91470066337E /* BKPhotoViewCell.swift */; };
 		584CDC7021E450B500FFA813 /* BKStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC6F21E450B500FFA813 /* BKStatuses.swift */; };
 		584CDC7421E4A54400FFA813 /* BKStatusesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */; };
 		584CDC7621E4C2C600FFA813 /* BKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584CDC7521E4C2C600FFA813 /* BKUser.swift */; };
@@ -69,6 +72,9 @@
 		5815EF6D20E5CA61001635E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5830ADE221DE025D00799D3A /* String+category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+category.swift"; sourceTree = "<group>"; };
 		5830AE2121E2F36700799D3A /* BKNewFeatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewFeatureController.swift; sourceTree = "<group>"; };
+		583A573822169D290066337E /* BKBrowseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKBrowseController.swift; sourceTree = "<group>"; };
+		583A573A2216BF7F0066337E /* UIColor+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
+		583A573C221A91470066337E /* BKPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKPhotoViewCell.swift; sourceTree = "<group>"; };
 		584CDC6F21E450B500FFA813 /* BKStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKStatuses.swift; sourceTree = "<group>"; };
 		584CDC7321E4A54400FFA813 /* BKStatusesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKStatusesCell.swift; sourceTree = "<group>"; };
 		584CDC7521E4C2C600FFA813 /* BKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKUser.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 				58B7476A21D4CBB500AFA7CF /* BKPresentationController.swift */,
 				58B7476C21D62D0A00AFA7CF /* BKPopoverDelegate.swift */,
 				58EAC0BE21F9B7C5000CA4D9 /* BKRefreshControl.swift */,
+				583A573822169D290066337E /* BKBrowseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +283,7 @@
 				58EAC0BC21F85866000CA4D9 /* BKNormalCell.swift */,
 				588C2C6021ECB009007CD318 /* BKPictureView.swift */,
 				58EAC0C021F9B823000CA4D9 /* BKRefreshView.xib */,
+				583A573C221A91470066337E /* BKPhotoViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 				584CDC9521E5A52E00FFA813 /* Date+Category.swift */,
 				584CDCB521E72E5700FFA813 /* UILabel+Category.swift */,
 				584CDCB721E730F200FFA813 /* UIButton+Category.swift */,
+				583A573A2216BF7F0066337E /* UIColor+Category.swift */,
 				588C2C5E21ECAD33007CD318 /* datajson.json */,
 			);
 			path = Common;
@@ -528,11 +537,13 @@
 				5814469F21DCA5890072F388 /* BKUserCount.swift in Sources */,
 				587E2C8220E61BBD009BBB79 /* BKMeController.swift in Sources */,
 				587E2C8420E61BCC009BBB79 /* BKMessageController.swift in Sources */,
+				583A573922169D290066337E /* BKBrowseController.swift in Sources */,
 				587E2C8020E61BAD009BBB79 /* BKHomeController.swift in Sources */,
 				587E2C7E20E61A2C009BBB79 /* BKDiscoverController.swift in Sources */,
 				5830AE2221E2F36700799D3A /* BKNewFeatureController.swift in Sources */,
 				5815EF6220E5CA5F001635E3 /* AppDelegate.swift in Sources */,
 				58EAC0BF21F9B7C5000CA4D9 /* BKRefreshControl.swift in Sources */,
+				583A573D221A91470066337E /* BKPhotoViewCell.swift in Sources */,
 				584CDCB621E72E5800FFA813 /* UILabel+Category.swift in Sources */,
 				588C2C6321EDD76D007CD318 /* BKMTableViewCell.swift in Sources */,
 				584CDCB821E730F200FFA813 /* UIButton+Category.swift in Sources */,
@@ -541,6 +552,7 @@
 				58EAC0BB21F80DE8000CA4D9 /* BKRetweetCell.swift in Sources */,
 				58B7476221D3CDB200AFA7CF /* BKPopoverController.swift in Sources */,
 				587E2C7A20E615E2009BBB79 /* BKTabBarController.swift in Sources */,
+				583A573B2216BF7F0066337E /* UIColor+Category.swift in Sources */,
 				587E2C7C20E61A0F009BBB79 /* BKComposeController.swift in Sources */,
 				584CDC7421E4A54400FFA813 /* BKStatusesCell.swift in Sources */,
 				58B7477221D73E4500AFA7CF /* BKOAuthController.swift in Sources */,

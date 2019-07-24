@@ -10,18 +10,18 @@ import UIKit
 
 class BKTabBarController: UITabBarController {
     
-
     
-//    override func viewWillLayoutSubviews() {
-//        var newTabBarFrame = tabBar.frame
-//
-//        let newTabBarHeight: CGFloat = 83
-//        newTabBarFrame.size.height = newTabBarHeight
-////        newTabBarFrame.origin.y = self.view.frame.size.height - newTabBarHeight
-//
-//        tabBar.frame = newTabBarFrame
-//    }
-//
+    
+    //    override func viewWillLayoutSubviews() {
+    //        var newTabBarFrame = tabBar.frame
+    //
+    //        let newTabBarHeight: CGFloat = 83
+    //        newTabBarFrame.size.height = newTabBarHeight
+    ////        newTabBarFrame.origin.y = self.view.frame.size.height - newTabBarHeight
+    //
+    //        tabBar.frame = newTabBarFrame
+    //    }
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +68,7 @@ class BKTabBarController: UITabBarController {
         button.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
         button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
         button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
-
+        
         button.addTarget(self,action:#selector(composeBtnClick),for:.touchUpInside)
         
         return button
@@ -92,17 +92,20 @@ class BKTabBarController: UITabBarController {
     
     @objc func composeBtnClick() {
         
-        print(#function)
+        let composeVC = BKComposeController()
+        let nav = UINavigationController(rootViewController: composeVC)
+        present(nav, animated: true, completion: nil)
+        
     }
     
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     
 }
